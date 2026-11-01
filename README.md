@@ -1,5 +1,4 @@
-# Abiding Way
+# Abiding Way (moved)
 
-Grow in faith. Follow Jesus, one day at a time.
-
-Live site: https://yhusain.github.io/abiding-way/
+The site now lives at https://abidingwaydaily.github.io/
+This repo only redirects old links.
