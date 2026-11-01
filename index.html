@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Abiding Way: grow in faith and follow Jesus, one day at a time. Daily verses, practices, a 16-day reading plan through Mark, and book picks.">
+<meta property="og:title" content="Abiding Way">
+<meta property="og:description" content="Grow in faith. Follow Jesus, one day at a time.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 22V9' stroke='%234C6A37' stroke-width='1.8' stroke-linecap='round'/%3E%3Cpath d='M12 13c-4 0-6-3-6-6 3 0 6 2 6 6Zm0-4c0-4 2-6 6-6 0 4-2 6-6 6Z' fill='%234C6A37'/%3E%3C/svg%3E">
+<title>Abiding Way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: one left-anchored column with a thin "vine" rule running down the margin; sections hang off it like branches. */
+:root{
+  --bg:#EDF0E9; --surface:#F7F8F4; --fg:#1D2924; --muted:#56635C; --line:#C9D1C3;
+  --accent:#4C6A37; --accent-ink:#F4F7EF; --gold:#A97B1F;
+  --display:"Gloock", "Georgia", serif;
+  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#131915; --surface:#1A221D; --fg:#E3E8DF; --muted:#9CA99F; --line:#2E3A33;
+  --accent:#9CBC7C; --accent-ink:#121812; --gold:#D8AE55; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#131915; --surface:#1A221D; --fg:#E3E8DF; --muted:#9CA99F; --line:#2E3A33;
+  --accent:#9CBC7C; --accent-ink:#121812; --gold:#D8AE55; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;position:relative}
+.vine{position:relative;padding-left:clamp(0px,4vw,56px)}
+@media (min-width:720px){.vine::before{content:"";position:absolute;left:12px;top:0;bottom:0;width:1px;background:var(--line)}}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.08}
+.ref{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.eyebrow{font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+p{margin:0}
+.prose{max-width:62ch}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.45rem;color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:22px;height:22px}
+.links{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover{color:var(--fg)}
+
+/* hero */
+.hero{padding-block:clamp(40px,8vw,96px) clamp(40px,6vw,72px);display:grid;gap:28px}
+.hero h1{font-size:clamp(3.2rem,11vw,7.5rem);letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lede{font-size:1.2rem;color:var(--muted);max-width:52ch}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);cursor:pointer;font-family:var(--body)}
+.btn.solid{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+
+/* today */
+.today{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(22px,4vw,40px);display:grid;gap:14px;margin-bottom:clamp(56px,9vw,104px)}
+.today blockquote{margin:0;font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.25rem);line-height:1.25;max-width:30ch}
+.today .prompt{color:var(--muted);max-width:60ch}
+
+section{margin-bottom:clamp(64px,10vw,120px)}
+.sec-head{display:grid;gap:10px;margin-bottom:32px}
+.sec-head h2{font-size:clamp(2rem,5vw,3.1rem)}
+
+/* practices */
+.practices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:0;border-top:1px solid var(--line)}
+.practice{padding:26px 24px 28px 0;border-bottom:1px solid var(--line);display:grid;gap:10px;align-content:start}
+.practice h3{font-size:1.65rem}
+.practice p{color:var(--muted);font-size:.98rem}
+.practice .try{font-size:.92rem;color:var(--fg)}
+.practice .try b{font-weight:600;color:var(--accent)}
+
+/* plan */
+.plan-top{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.meter{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{width:180px;max-width:50vw;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px}
+.day{border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+.day label{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:14px 16px;cursor:pointer;align-items:start}
+.day input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);grid-row:span 2}
+.day .n{font-family:var(--mono);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.day .t{font-size:.95rem;line-height:1.35}
+.day.done{border-color:var(--accent)}
+.day.done .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.reset{background:none;border:0;color:var(--muted);font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer;padding:0}
+
+/* shelf */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px 36px}
+.book{display:grid;grid-template-columns:54px 1fr;gap:16px;align-items:start}
+.spine{height:84px;border-radius:2px;background:var(--accent);position:relative}
+.spine::after{content:"";position:absolute;left:8px;right:8px;top:12px;height:2px;background:var(--gold);opacity:.8}
+.book:nth-child(3n+2) .spine{background:var(--fg)}
+.book:nth-child(3n) .spine{background:var(--gold)}
+.book:nth-child(3n) .spine::after{background:var(--bg)}
+.book h3{font-size:1.3rem}
+.book .by{font-size:.85rem;color:var(--muted);margin:2px 0 6px}
+.book p{font-size:.95rem;color:var(--muted)}
+
+/* connect */
+.connect{border-top:1px solid var(--line);padding-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px}
+.handles{display:grid;gap:10px}
+.handle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
+.handle span{font-family:var(--mono);font-size:.9rem;min-width:0;overflow-wrap:anywhere}
+.handle small{font-size:.78rem;color:var(--muted);flex:none}
+footer{padding-block:32px 48px;color:var(--muted);font-size:.85rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top" aria-label="Abiding Way home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22V9" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><path d="M12 13c-4 0-6-3-6-6 3 0 6 2 6 6Zm0-4c0-4 2-6 6-6 0 4-2 6-6 6Z" fill="var(--accent)"/></svg>
+      Abiding Way
+    </a>
+    <div class="links">
+      <a href="#practices">Practices</a>
+      <a href="#plan">Reading plan</a>
+      <a href="#shelf">Bookshelf</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </nav>
+
+  <div class="vine" id="top">
+    <header class="hero">
+      <span class="ref">John 15:4 · WEB</span>
+      <h1>Remain in me,<br>and <em>I in you.</em></h1>
+      <p class="lede">Abiding Way is a quiet place to grow in faith and follow Jesus one day at a time, through Scripture, prayer, and a life lived with others.</p>
+      <div class="cta">
+        <a class="btn solid" href="#plan">Start the 16-day plan</a>
+        <a class="btn ghost" href="#practices">Explore the practices</a>
+      </div>
+    </header>
+
+    <div class="today" aria-live="polite">
+      <span class="eyebrow" id="today-date">Today's verse</span>
+      <blockquote id="today-verse">Your word is a lamp to my feet, and a light for my path.</blockquote>
+      <span class="ref" id="today-ref">Psalm 119:105</span>
+      <p class="prompt" id="today-prompt">Reflect: where do you need light for your next step today?</p>
+    </div>
+
+    <section id="practices">
+      <div class="sec-head">
+        <span class="eyebrow">Ways to grow</span>
+        <h2>Six practices of a follower</h2>
+        <p class="prose" style="color:var(--muted)">Jesus didn't hand his disciples a program. He invited them to walk with him. These habits make room for that walk.</p>
+      </div>
+      <div class="practices">
+        <article class="practice">
+          <span class="ref">Mark 1:35</span>
+          <h3>Prayer</h3>
+          <p>Jesus rose early and went to a quiet place to pray. Prayer is conversation with God, not a performance.</p>
+          <p class="try"><b>Try:</b> five unhurried minutes before you open your phone.</p>
+        </article>
+        <article class="practice">
+          <span class="ref">Psalm 119:105</span>
+          <h3>Scripture</h3>
+          <p>Read slowly and often. Let the Gospels show you who Jesus is in his own words and actions.</p>
+          <p class="try"><b>Try:</b> one chapter of Mark a day with the plan below.</p>
+        </article>
+        <article class="practice">
+          <span class="ref">Hebrews 10:24</span>
+          <h3>Community</h3>
+          <p>Faith grows best among people who know you. Find a church and a few friends who will walk with you.</p>
+          <p class="try"><b>Try:</b> invite one person to read along this week.</p>
+        </article>
+        <article class="practice">
+          <span class="ref">Galatians 6:2</span>
+          <h3>Service</h3>
+          <p>Following Jesus means caring for others the way he did, especially people who can't repay you.</p>
+          <p class="try"><b>Try:</b> one quiet act of help, told to no one.</p>
+        </article>
+        <article class="practice">
+          <span class="ref">Matthew 11:28</span>
+          <h3>Rest</h3>
+          <p>Jesus offers rest to the weary. A weekly rhythm of rest is trust that God holds what you set down.</p>
+          <p class="try"><b>Try:</b> half a day this week with no work and no screens.</p>
+        </article>
+        <article class="practice">
+          <span class="ref">Luke 9:23</span>
+          <h3>Surrender</h3>
+          <p>Each day is a fresh choice to follow. Bring your plans, fears, and failures to him and begin again.</p>
+          <p class="try"><b>Try:</b> end the day by naming one thing you're handing over.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="plan">
+      <div class="sec-head">
+        <span class="eyebrow">Reading plan</span>
+        <h2>Walk through Mark in 16 days</h2>
+        <p class="prose" style="color:var(--muted)">Mark is the shortest Gospel and moves fast. One chapter a day, about ten minutes. Check off each day; your progress stays on this device.</p>
+      </div>
+      <div class="plan-top">
+        <div class="meter"><div class="bar"><i id="bar"></i></div><span id="count">0 of 16 days</span></div>
+        <button class="reset" id="reset" type="button">Start over</button>
+      </div>
+      <ul class="days" id="days"></ul>
+    </section>
+
+    <section id="shelf">
+      <div class="sec-head">
+        <span class="eyebrow">From the bookshelf</span>
+        <h2>Books for the journey</h2>
+        <p class="prose" style="color:var(--muted)">Classics that have helped generations of believers go deeper.</p>
+      </div>
+      <div class="shelf">
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>Mere Christianity</h3><p class="by">C.S. Lewis</p><p>A clear, reasoned case for the core of the faith. A good first read for seekers and new believers.</p></div></article>
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>The Imitation of Christ</h3><p class="by">Thomas à Kempis</p><p>Short devotional chapters on humility and inner life, read for more than five centuries.</p></div></article>
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>Celebration of Discipline</h3><p class="by">Richard J. Foster</p><p>A practical guide to prayer, fasting, solitude, and other habits that shape a follower.</p></div></article>
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>The Practice of the Presence of God</h3><p class="by">Brother Lawrence</p><p>A monk's letters on meeting God in ordinary work, even washing dishes.</p></div></article>
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>Life Together</h3><p class="by">Dietrich Bonhoeffer</p><p>A short, searching book on what Christian community actually asks of us.</p></div></article>
+        <article class="book"><div class="spine" aria-hidden="true"></div><div><h3>The Pursuit of God</h3><p class="by">A.W. Tozer</p><p>A call to seek God himself rather than settle for religious routine.</p></div></article>
+      </div>
+    </section>
+
+    <section id="connect" style="margin-bottom:56px">
+      <div class="connect">
+        <div class="sec-head" style="margin:0">
+          <span class="eyebrow">Connect</span>
+          <h2>Walk with us</h2>
+          <p class="prose" style="color:var(--muted)">Daily verses, reading reminders, and encouragement. Have a prayer request or a question about faith? Write to us anytime.</p>
+        </div>
+        <div class="handles">
+          <div class="handle"><span>abidingway@gmail.com</span><small>Email</small></div>
+          <div class="handle"><span>@abidingway</span><small>Instagram</small></div>
+          <div class="handle"><span>@abidingway</span><small>Snapchat</small></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <span>© 2026 Abiding Way</span>
+    <span>Scripture quotations from the World English Bible (public domain).</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var verses=[
+    ["Your word is a lamp to my feet, and a light for my path.","Psalm 119:105","Where do you need light for your next step today?"],
+    ["Come to me, all you who labor and are heavily burdened, and I will give you rest.","Matthew 11:28","What burden can you bring to Jesus right now?"],
+    ["Come after me, and I will make you into fishers for men.","Mark 1:17","What would it look like to follow him more closely this week?"],
+    ["Be still, and know that I am God.","Psalm 46:10","Take two quiet minutes. What do you notice?"],
+    ["But seek first God's Kingdom and his righteousness; and all these things will be given to you as well.","Matthew 6:33","What has been first in your mind lately?"],
+    ["In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God.","Philippians 4:6","Name one worry and one thing you're thankful for."],
+    ["Bear one another's burdens, and so fulfill the law of Christ.","Galatians 6:2","Who around you is carrying something heavy?"]
+  ];
+  var d=new Date(), start=new Date(d.getFullYear(),0,0);
+  var doy=Math.floor((d-start)/864e5), v=verses[doy%verses.length];
+  document.getElementById('today-verse').textContent=v[0];
+  document.getElementById('today-ref').textContent=v[1]+" · WEB";
+  document.getElementById('today-prompt').textContent="Reflect: "+v[2];
+  document.getElementById('today-date').textContent="Today's verse · "+d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});
+
+  var plan=["Jesus is baptized and calls his first disciples","Healing the paralyzed man; Levi follows","Twelve chosen; Jesus' true family","Parables of the sower and the seed","Legion freed; a girl raised to life","Five thousand fed; walking on water","What makes a person clean","Peter's confession: You are the Christ","The transfiguration; faith like a child","The last will be first; Bartimaeus sees","Entry into Jerusalem; the temple cleared","The greatest commandment; the widow's gift","Stay awake and watch","The Last Supper and Gethsemane","The trial and the cross","He is risen"];
+  var KEY='abidingway-mark', done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){done={}}
+  var ul=document.getElementById('days');
+  plan.forEach(function(t,i){
+    var li=document.createElement('li');li.className='day';
+    li.innerHTML='<label><input type="checkbox" id="mark-'+(i+1)+'"><span class="n">Day '+(i+1)+' · Mark '+(i+1)+'</span><span class="t"></span></label>';
+    li.querySelector('.t').textContent=t;
+    var cb=li.querySelector('input');cb.checked=!!done[i+1];
+    cb.addEventListener('change',function(){done[i+1]=cb.checked;save();render()});
+    ul.appendChild(li);
+  });
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}}
+  function render(){
+    var n=0;ul.querySelectorAll('.day').forEach(function(li,i){var c=!!done[i+1];li.classList.toggle('done',c);if(c)n++});
+    document.getElementById('count').textContent=n+' of 16 days'+(n===16?' · finished!':'');
+    document.getElementById('bar').style.width=(n/16*100)+'%';
+  }
+  document.getElementById('reset').addEventListener('click',function(){done={};save();ul.querySelectorAll('input').forEach(function(c){c.checked=false});render()});
+  render();
+})();
+</script>
+
+</body>
+</html>
